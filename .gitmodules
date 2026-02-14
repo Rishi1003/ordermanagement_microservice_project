@@ -1,0 +1,3 @@
+[submodule "project-configurations"]
+	path = project-configurations
+	url = https://github.com/Rishi1003/microservice_configs.git

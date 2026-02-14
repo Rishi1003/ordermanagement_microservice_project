@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/project-configurations
+          # uri: file:///C:/Users/Rishi/Desktop/ordermanagement_microservices/project-configurations
+          clone-on-start: true
+          default-label: master
+          search-paths: "/{application}"
+          force-pull: true
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env
+
+logging:
+  level:
+    root: INFO
