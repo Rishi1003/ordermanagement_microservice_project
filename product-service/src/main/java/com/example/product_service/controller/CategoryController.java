@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/categories")
+@RequestMapping("/api/v1/categories")
 public class CategoryController {
 
     private final CategoryService categoryService;
@@ -42,8 +42,7 @@ public class CategoryController {
     @PutMapping("/{id}")
     public ResponseEntity<CategoryResponse> updateCategory(
             @PathVariable UUID id,
-            @Valid @RequestBody CategoryUpdateRequest request
-    ) {
+            @Valid @RequestBody CategoryUpdateRequest request) {
         if (request == null) {
             throw new IllegalArgumentException("request must not be null");
         }

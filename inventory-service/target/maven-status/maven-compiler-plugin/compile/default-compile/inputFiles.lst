@@ -1,0 +1,11 @@
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\controller\InventoryController.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\dto\requestDtos\InventoryCreateUpdateRequest.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\dto\responseDtos\InventoryResponse.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\entity\Inventory.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\exception\ErrorResponse.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\exception\GlobalExceptionHandler.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\exception\ResourceNotFoundException.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\InventoryServiceApplication.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\mapper\InventoryMapper.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\repository\InventoryRepository.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\inventory-service\src\main\java\com\example\inventory_service\service\InventoryService.java

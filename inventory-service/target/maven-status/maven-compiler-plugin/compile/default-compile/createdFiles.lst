@@ -1,0 +1,13 @@
+com\example\inventory_service\exception\ErrorResponse.class
+com\example\inventory_service\entity\Inventory.class
+com\example\inventory_service\exception\ResourceNotFoundException.class
+com\example\inventory_service\dto\responseDtos\InventoryResponse.class
+com\example\inventory_service\repository\InventoryRepository.class
+com\example\inventory_service\mapper\InventoryMapperImpl.class
+com\example\inventory_service\service\InventoryService.class
+com\example\inventory_service\dto\requestDtos\InventoryCreateUpdateRequest.class
+com\example\inventory_service\InventoryServiceApplication.class
+com\example\inventory_service\mapper\InventoryMapper.class
+com\example\inventory_service\controller\InventoryController.class
+com\example\inventory_service\entity\Inventory$InventoryBuilder.class
+com\example\inventory_service\exception\GlobalExceptionHandler.class

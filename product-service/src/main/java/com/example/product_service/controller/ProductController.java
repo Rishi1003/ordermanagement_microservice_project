@@ -3,7 +3,6 @@ package com.example.product_service.controller;
 import com.example.product_service.dto.requestDtos.ProductCreateUpdateRequest;
 import com.example.product_service.dto.responseDtos.ProductResponse;
 import com.example.product_service.service.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,12 +12,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/v1/products")
 @Validated
 public class ProductController {
 
-    @Autowired
-    private ProductService productService;
+    private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @PostMapping
     public ResponseEntity<ProductResponse> createProduct(@RequestBody @Validated ProductCreateUpdateRequest request) {
@@ -33,7 +35,8 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProductResponse> updateProduct(@PathVariable UUID id, @RequestBody @Validated ProductCreateUpdateRequest request) {
+    public ResponseEntity<ProductResponse> updateProduct(@PathVariable UUID id,
+            @RequestBody @Validated ProductCreateUpdateRequest request) {
         ProductResponse response = productService.updateProduct(id, request);
         return ResponseEntity.ok(response);
     }
@@ -46,15 +49,15 @@ public class ProductController {
 
     @GetMapping("/category/{categoryId}")
     public ResponseEntity<Page<ProductResponse>> getProductsByCategory(@PathVariable UUID categoryId,
-                                                                        @RequestParam(defaultValue = "0") int page,
-                                                                        @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
         Page<ProductResponse> response = productService.getProductsByCategory(categoryId, page, size);
         return ResponseEntity.ok(response);
     }
 
     @GetMapping
     public ResponseEntity<Page<ProductResponse>> getAllProducts(@RequestParam(defaultValue = "0") int page,
-                                                                 @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "10") int size) {
         Page<ProductResponse> response = productService.getAllProducts(page, size);
         return ResponseEntity.ok(response);
     }

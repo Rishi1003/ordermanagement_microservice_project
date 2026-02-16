@@ -27,6 +27,10 @@
         <module>config-server</module>
         <module>eureka-server</module>
         <module>product-service</module>
+        <module>inventory-service</module>
+        <module>user-service</module>
+        <module>api-gateway</module>
+        <module>auth-service</module>
     </modules>
 
     <!-- ===== Global Properties ===== -->

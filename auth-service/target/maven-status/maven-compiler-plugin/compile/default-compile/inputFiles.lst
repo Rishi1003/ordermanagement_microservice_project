@@ -1,0 +1,13 @@
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\AuthServiceApplication.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\client\UserClient.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\config\SecurityConfig.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\config\WebClientConfig.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\controller\AuthController.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\dto\AuthRequest.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\dto\AuthResponse.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\dto\UserVerificationResponse.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\exception\GlobalExceptionHandler.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\exception\InvalidCredentialsException.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\exception\UserNotFoundException.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\service\AuthService.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\auth-service\src\main\java\com\example\auth_service\util\JwtUtil.java
