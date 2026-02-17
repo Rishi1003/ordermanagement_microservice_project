@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -34,6 +35,9 @@ public class Category {
     @Builder.Default
     @Column(nullable = false)
     private boolean active = true;
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Product> products;
 
     private Instant updatedAt;
 }
