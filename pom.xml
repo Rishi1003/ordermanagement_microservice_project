@@ -31,6 +31,7 @@
         <module>user-service</module>
         <module>api-gateway</module>
         <module>auth-service</module>
+        <module>orders-service</module>
     </modules>
 
     <!-- ===== Global Properties ===== -->
