@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -30,7 +33,12 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<CategoryResponse> createCategory(@Valid @RequestBody CategoryCreateRequest request) {
+    public ResponseEntity<CategoryResponse> createCategory(
+            @RequestHeader(value = "X-User-Role", required = true) String role,
+            @Valid @RequestBody CategoryCreateRequest request) {
+        if (!"ADMIN".equals(role)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Access Denied: Only ADMINs can create categories");
+        }
         CategoryResponse created = categoryService.createCategory(request);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
@@ -41,8 +49,12 @@ public class CategoryController {
 
     @PutMapping("/{id}")
     public ResponseEntity<CategoryResponse> updateCategory(
+            @RequestHeader(value = "X-User-Role", required = true) String role,
             @PathVariable UUID id,
             @Valid @RequestBody CategoryUpdateRequest request) {
+        if (!"ADMIN".equals(role)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Access Denied: Only ADMINs can update categories");
+        }
         if (request == null) {
             throw new IllegalArgumentException("request must not be null");
         }
@@ -55,7 +67,13 @@ public class CategoryController {
     }
 
     @PutMapping("/{id}/deactivate")
-    public ResponseEntity<CategoryResponse> deactivateCategory(@PathVariable UUID id) {
+    public ResponseEntity<CategoryResponse> deactivateCategory(
+            @RequestHeader(value = "X-User-Role", required = true) String role,
+            @PathVariable UUID id) {
+        if (!"ADMIN".equals(role)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN,
+                    "Access Denied: Only ADMINs can deactivate categories");
+        }
         if (id == null) {
             throw new IllegalArgumentException("Id must not be null");
         }
@@ -65,7 +83,13 @@ public class CategoryController {
     }
 
     @PutMapping("/{id}/activate")
-    public ResponseEntity<CategoryResponse> activateCategory(@PathVariable UUID id) {
+    public ResponseEntity<CategoryResponse> activateCategory(
+            @RequestHeader(value = "X-User-Role", required = true) String role,
+            @PathVariable UUID id) {
+        if (!"ADMIN".equals(role)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN,
+                    "Access Denied: Only ADMINs can activate categories");
+        }
         if (id == null) {
             throw new IllegalArgumentException("Id must not be null");
         }

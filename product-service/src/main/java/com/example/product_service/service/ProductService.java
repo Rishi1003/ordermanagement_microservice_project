@@ -22,11 +22,14 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
     private final CategoryRepository categoryRepository;
+    private final com.example.product_service.client.InventoryClient inventoryClient;
 
-    public ProductService(ProductRepository productRepository, ProductMapper productMapper, CategoryRepository categoryRepository) {
+    public ProductService(ProductRepository productRepository, ProductMapper productMapper,
+            CategoryRepository categoryRepository, com.example.product_service.client.InventoryClient inventoryClient) {
         this.productRepository = productRepository;
         this.productMapper = productMapper;
         this.categoryRepository = categoryRepository;
+        this.inventoryClient = inventoryClient;
     }
 
     @Transactional
@@ -36,17 +39,17 @@ public class ProductService {
         if (product == null) {
             throw new IllegalArgumentException("Failed to map ProductCreateRequest to Product entity");
         }
-        
+
         if (request.categoryId() == null) {
             throw new IllegalArgumentException("Category ID cannot be null");
         }
-        
+
         UUID categoryId = request.categoryId();
         if (categoryId == null) {
             throw new IllegalArgumentException("Category ID cannot be null");
         }
         Category category = categoryRepository.findById(categoryId)
-            .orElseThrow(() -> new ResourceNotFoundException("Category not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Category not found"));
 
         if (productRepository.existsBySku(request.sku())) {
             throw new IllegalArgumentException("Product with SKU '" + request.sku() + "' already exists");
@@ -55,6 +58,12 @@ public class ProductService {
         product.setCategory(category);
 
         product = productRepository.save(product);
+
+        // Create initial inventory
+        com.example.product_service.dto.requestDtos.InventoryRequest inventoryRequest = new com.example.product_service.dto.requestDtos.InventoryRequest(
+                product.getId(), 0, 0);
+        inventoryClient.createInventory(inventoryRequest);
+
         return productMapper.toProductResponse(product);
     }
 
@@ -77,11 +86,8 @@ public class ProductService {
         }
 
         Product product = productRepository.findById(productId)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Product not found with id: " + productId)
-                );
+                .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + productId));
 
-        
         product.setName(request.name());
         product.setDescription(request.description());
         product.setPrice(request.price());
@@ -89,8 +95,7 @@ public class ProductService {
         if (!product.getSku().equals(request.sku())) {
             if (productRepository.existsBySku(request.sku())) {
                 throw new IllegalArgumentException(
-                        "Product with SKU '" + request.sku() + "' already exists"
-                );
+                        "Product with SKU '" + request.sku() + "' already exists");
             }
             product.setSku(request.sku());
         }
@@ -98,11 +103,8 @@ public class ProductService {
         if (request.categoryId() != null) {
 
             Category category = categoryRepository.findById(request.categoryId())
-                    .orElseThrow(() ->
-                            new ResourceNotFoundException(
-                                    "Category not found with id: " + request.categoryId()
-                            )
-                    );
+                    .orElseThrow(() -> new ResourceNotFoundException(
+                            "Category not found with id: " + request.categoryId()));
 
             product.setCategory(category);
         }
@@ -111,7 +113,6 @@ public class ProductService {
 
         return productMapper.toProductResponse(product);
     }
-
 
     public ProductResponse getProductById(UUID productId) {
         if (productId == null) {

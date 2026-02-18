@@ -49,6 +49,7 @@
 
         <!-- Build -->
         <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+        <jjwt.version>0.11.5</jjwt.version>
     </properties>
 
     <!-- ===== Dependency Management ===== -->
@@ -62,6 +63,24 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- JWT -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
 
             <!-- Lombok - UPDATED -->
             <dependency>

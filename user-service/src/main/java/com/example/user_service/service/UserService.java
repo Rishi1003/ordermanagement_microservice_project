@@ -39,6 +39,11 @@ public class UserService {
             throw new IllegalArgumentException("Email '" + request.email() + "' already exists");
         }
 
+        // Public registration only allows CUSTOMER role
+        if (request.role() != com.example.user_service.entity.Role.CUSTOMER) {
+            throw new IllegalArgumentException("Only CUSTOMER role can be created via public registration");
+        }
+
         User user = userMapper.toEntityUser(request);
         user.setPassword(passwordEncoder.encode(request.password()));
 

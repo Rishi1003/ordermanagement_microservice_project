@@ -1,1 +1,8 @@
 com\example\apigateway\ApiGatewayApplication.class
+com\example\apigateway\exception\GlobalErrorWebExceptionHandler.class
+com\example\apigateway\filter\AuthenticationGatewayFilterFactory.class
+com\example\apigateway\util\JwtUtil.class
+com\example\apigateway\exception\ErrorResponse.class
+com\example\apigateway\filter\AuthenticationGatewayFilterFactory$Config.class
+com\example\apigateway\filter\RouteValidator.class
+com\example\apigateway\exception\GlobalErrorAttributes.class

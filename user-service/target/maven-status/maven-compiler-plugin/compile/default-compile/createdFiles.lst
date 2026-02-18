@@ -4,6 +4,7 @@ com\example\user_service\service\UserService.class
 com\example\user_service\dto\responseDtos\UserVerificationResponse.class
 com\example\user_service\UserServiceApplication.class
 com\example\user_service\exception\GlobalExceptionHandler.class
+com\example\user_service\config\AdminSeeder.class
 com\example\user_service\entity\User.class
 com\example\user_service\dto\responseDtos\UserResponse.class
 com\example\user_service\entity\Role.class

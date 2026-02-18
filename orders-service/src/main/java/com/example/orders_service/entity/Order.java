@@ -7,6 +7,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -26,8 +27,13 @@ public class Order {
 
     private UUID userId;
 
+    @Builder.Default
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderLineItems> orderLineItems = new ArrayList<>();
+
+    private BigDecimal totalPrice;
+
+    private String status;
 
     @Column(nullable = false, updatable = false)
     private Instant createdAt;

@@ -28,6 +28,9 @@ public class OrderLineItems {
     @Column(nullable = false)
     private Integer quantity;
 
+    @Column(nullable = false)
+    private UUID productId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private Order order;

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.UUID;
 
@@ -23,20 +24,35 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<ProductResponse> createProduct(@RequestBody @Validated ProductCreateUpdateRequest request) {
+    public ResponseEntity<ProductResponse> createProduct(
+            @RequestHeader(value = "X-User-Role", required = true) String role,
+            @RequestBody @Validated ProductCreateUpdateRequest request) {
+        if (!"ADMIN".equals(role)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Access Denied: Only ADMINs can create products");
+        }
         ProductResponse response = productService.createProduct(request);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> softDeleteProduct(@PathVariable UUID id) {
+    public ResponseEntity<Void> softDeleteProduct(
+            @RequestHeader(value = "X-User-Role", required = true) String role,
+            @PathVariable UUID id) {
+        if (!"ADMIN".equals(role)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Access Denied: Only ADMINs can delete products");
+        }
         productService.softDeleteProduct(id);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProductResponse> updateProduct(@PathVariable UUID id,
+    public ResponseEntity<ProductResponse> updateProduct(
+            @RequestHeader(value = "X-User-Role", required = true) String role,
+            @PathVariable UUID id,
             @RequestBody @Validated ProductCreateUpdateRequest request) {
+        if (!"ADMIN".equals(role)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Access Denied: Only ADMINs can update products");
+        }
         ProductResponse response = productService.updateProduct(id, request);
         return ResponseEntity.ok(response);
     }

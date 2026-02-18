@@ -1,7 +1,15 @@
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\client\InventoryClient.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\client\ProductClient.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\client\UserClient.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\config\WebClientConfig.java
 C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\controller\OrderController.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\dto\InventoryCreateUpdateRequest.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\dto\InventoryResponse.java
 C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\dto\OrderLineItemsDto.java
 C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\dto\OrderRequest.java
 C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\dto\OrderResponse.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\dto\ProductResponse.java
+C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\dto\UserResponse.java
 C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\entity\Order.java
 C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\entity\OrderLineItems.java
 C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\src\main\java\com\example\orders_service\exception\ErrorResponse.java

@@ -1,0 +1,117 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Order Management Microservices                                     [pom]
+[INFO] orders-service                                                     [jar]
+[INFO] 
+[INFO] ----------< com.example.ordermanagement:microservices-parent >----------
+[INFO] Building Order Management Microservices 1.0.0                      [1/2]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ microservices-parent ---
+[INFO] 
+[INFO] -------------< com.example.ordermanagement:orders-service >-------------
+[INFO] Building orders-service 1.0.0                                      [2/2]
+[INFO]   from orders-service\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ orders-service ---
+[INFO] Deleting C:\Users\Rishi\Desktop\Dev\ordermanagement_microservices\orders-service\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ orders-service ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ orders-service ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 20 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/entity/Order.java:[30,34] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[WARNING] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/mapper/OrderMapper.java:[19,11] Unmapped target properties: "totalPrice, status".
+[INFO] 2 warnings 
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[47,103] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[49,73] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[60,118] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[62,89] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[79,122] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[88,29] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[139,122] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[144,29] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[151,85] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.example.orders_service.entity.OrderLineItems
+[INFO] 9 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Order Management Microservices 1.0.0:
+[INFO] 
+[INFO] Order Management Microservices ..................... SUCCESS [  0.109 s]
+[INFO] orders-service ..................................... FAILURE [  3.701 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.185 s
+[INFO] Finished at: 2026-02-17T22:04:51+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project orders-service: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[47,103] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[49,73] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[60,118] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[62,89] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[79,122] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[88,29] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[139,122] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[144,29] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] /C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/orders-service/src/main/java/com/example/orders_service/service/OrderService.java:[151,85] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.example.orders_service.entity.OrderLineItems
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :orders-service

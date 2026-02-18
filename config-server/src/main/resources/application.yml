@@ -7,10 +7,10 @@ spring:
         git:
           uri: file:///C:/Users/Rishi/Desktop/Dev/ordermanagement_microservices/project-configurations
           # uri: file:///C:/Users/Rishi/Desktop/ordermanagement_microservices/project-configurations
-          clone-on-start: true
+          clone-on-start: false
           default-label: master
           search-paths: "/{application}"
-          force-pull: true
+          force-pull: false
 
 server:
   port: 8888
